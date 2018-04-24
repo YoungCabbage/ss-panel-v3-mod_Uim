@@ -25,6 +25,8 @@ class Pay
                 return Pay::yftpay_html($user);
             case 'codepay':
                 return Pay::codepay_html($user);
+            case 'f2fpay_codepay':
+                return Pay::f2fpay_codepay_html($user);
             default:
                 return "";
         }
@@ -35,6 +37,34 @@ class Pay
      * @param  User   $user User
      * @return String       HTML
      */
+    private static function f2fpay_codepay_html($user)
+    {
+
+            return '
+                        <p><i class="icon icon-lg">monetization_on</i>&nbsp;余额&nbsp;<font color="red" size="5">'.$user->money.'</font>&nbsp;元</p>
+
+                        <p><img src="/images/qianbai-4.png" height="250" width="200" /></p>
+                        <div class="form-group form-group-label">
+                        <label class="floating-label" for="number">请选择充值金额</label>
+                        <select id="type" class="form-control" name="amount">
+                            <option></option>
+                            <option value="'.Config::get('amount')[0].'">'.Config::get('amount')[0].'元</option>
+                            <option value="'.Config::get('amount')[1].'">'.Config::get('amount')[1].'元</option>
+                            <option value="'.Config::get('amount')[2].'">'.Config::get('amount')[2].'元</option>
+                            <option value="'.Config::get('amount')[3].'">'.Config::get('amount')[3].'元</option>
+                            <option value="'.Config::get('amount')[4].'">'.Config::get('amount')[4].'元</option>
+                        </select>
+                        </div>
+                        <p></p>
+                        <button class="btn btn-flat waves-attach" id="urlChange"><img src="/images/alipay.jpg" width="50px" height="50px" /></button>
+                        <button class="btn btn-flat waves-attach" onclick="codepay()"><img src="/images/weixin.jpg" width="50px" height="50px" /></button>
+                        <script>
+                            function codepay() {
+                                window.location.href=("/user/code/codepay?type=3&price="+$("#type").val());
+                            }
+                        </script>
+                        ';
+    }
     public static function doiampay_html(User $user){
         return \App\Utils\DoiAMPay::render();
     }
@@ -115,7 +145,7 @@ class Pay
                             <br>
                             <button class="btn btn-flat waves-attach" id="btnSubmit" type="submit" name="type" value="1" ><img src="/images/alipay.jpg" width="50px" height="50px" /></button>
                             <button class="btn btn-flat waves-attach" id="btnSubmit" type="submit" name="type" value="2" ><img src="/images/qqpay.jpg" width="50px" height="50px" /></button>
-                            <button class="btn btn-flat waves-attach" id="btnSubmit" type="submit" name="type" value="3" disabled><img src="/images/weixin.jpg" width="50px" height="50px" /></button>
+                            <button class="btn btn-flat waves-attach" id="btnSubmit" type="submit" name="type" value="3" ><img src="/images/weixin.jpg" width="50px" height="50px" /></button>
 
                         </form>
 ';
@@ -692,7 +722,7 @@ class Pay
             $sign .= "$key=$val"; //拼接为url参数形式
         }
         if (!$_POST['pay_no'] || md5($sign . $codepay_key) != $_POST['sign']) { //不合法的数据
-            exit('fail'); //返回成功 不要删除哦
+            exit('fail'); //返回失败，等待下次回调
         } else { //合法的数据
             //业务处理
             $pay_id = $_POST['pay_id']; //需要充值的ID 或订单号 或用户名
@@ -721,20 +751,27 @@ class Pay
                     $gift_user->save();
 
                     $Payback=new Payback();
-                    $Payback->total=$total;
+                    $Payback->total=$price;
                     $Payback->userid=$user->id;
                     $Payback->ref_by=$user->ref_by;
                     $Payback->ref_get=$codeq->number*(Config::get('code_payback')/100);
                     $Payback->datetime=time();
                     $Payback->save();
                 }
-            exit('success'); //返回成功 不要删除哦
+
+                if (Config::get('enable_donate') == 'true') {
+                    if ($user->is_hide == 1) {
+                        Telegram::Send("一位不愿透露姓名的大老爷给我们捐了 ".$codeq->number." 元!");
+                    } else {
+                        Telegram::Send($user->user_name." 大老爷给我们捐了 ".$codeq->number." 元！");
+                    }
+                }
             }
+
+            exit('success'); //返回成功 不要删除哦
         }
-        if ($codeq!=null){
 
         return;
-        }
     }
 
    private static function notify(){
@@ -802,5 +839,15 @@ class Pay
                 return "";
         }
         return null;
+    }
+
+    public static function f2fpay_pay_callback($request)
+    {
+        return Pay::f2fpay_callback();
+    }
+
+    public static function codepay_pay_callback($request)
+    {
+        return Pay::codepay_callback();
     }
 }

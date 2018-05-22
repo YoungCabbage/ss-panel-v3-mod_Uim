@@ -13,8 +13,8 @@
         <link rel="shortcut icon" href="/favicon.ico"/>
         <link rel="bookmark" href="/favicon.ico"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-		<link rel="stylesheet" href="assets/css/main.css"/>
-        <noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>   
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sspuic/p@0x04/public/assets/css/main.css"/>
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sspuic/p@0x04/public/assets/css/noscript.css" /></noscript>   
   </head>
   
        <body>
@@ -66,8 +66,8 @@
                                <li><a href="#1">简介</a></li>
 								<li><a href="/auth/login">登录</a></li>
 								<li><a href="/auth/register">注册</a></li>
-                              	<li><a href="#4">联系</a></li>
-								<li><a href="#5">下載</a></li>
+                              	<li><a href="#5">下载</a></li>
+								<li><a href="/staff">STAFF</a></li>
                               
                            </ul>
 						</nav>
@@ -79,7 +79,7 @@
                       <!--标签1开始-->
                       <article id="1">
                       <h2 class="major">简介</h2>
-                      <p>这里是示范文字</p><p> 请到站点文件夹</p><p>resources/views/material/index.tpl</p><p>第79行进行修改</p></article>
+                      <p>「ホワイトアルバムの季節」が、また、やってきた。</p></article>
 					  <!--
 					  简介修改示例: 
 					  <p> 123</p>
@@ -100,7 +100,7 @@
                                   </article>
                       <!--标签5开始-->
 	                        <article id="5">
-							<h2 class="major">软件下載</h2>
+							<h2 class="major">软件下载</h2>
 							<ul>
 							  <li><a href="/ssr-download/ssr-win.7z" class="icon fa-windows"><span class="label"></span> Windows</a></li>
 							  <li><a href="/ssr-download/ssr-mac.dmg" class="icon fa-apple"><span class="label">Mac</span> Mac</a></li>
@@ -155,9 +155,9 @@
                 <!-- BG -->
 			<div id="bg"></div>
 	        	<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-         <script src="assets/js/main.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/sspuic/p@0x01/public/assets/js/jquery.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/sspuic/p@0x01/public/assets/js/skel.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/gh/sspuic/p@0x01/public/assets/js/util.js"></script>
+         <script src="https://cdn.jsdelivr.net/gh/sspuic/p@0x01/public/assets/js/main.js"></script>
 	</body>
 </html>

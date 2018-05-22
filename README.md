@@ -3,15 +3,18 @@
 
 **ss-panel-v3-mod**是一款转为shadowsocks设计的web前端面板，再次感谢ss-panel-v3mod 的制作者，修改后的功能简介：
 
-- **支付系统集成**：集成 支付宝当面付 黛米付 易付通 码支付等多种支付系统，使用方法见项目[wiki]()
+- **支付系统集成**：集成 支付宝当面付 黛米付 易付通 码支付等多种支付系统，使用方法见项目[wiki](https://github.com/NimaQu/ss-panel-v3-mod_Uim/wiki/)
 - **UI** ：修改为 ~~援交~~ 圆角、并自定义了几个图标的显示，节点列表等級0可见等級1节点但无法看见节点详情，增加了国家图标显示
 - **商店**：商品增加同时连接设备数，用户限速属性
 - 从肥羊那里**抄**来的：新用户注册现金奖励|高等级节点体验|设备数量限制
 - **优化**：css和js等置入本地提升加载速度
+- 增加**v2Ray** 功能，详情请看 [wiki](https://github.com/NimaQu/ss-panel-v3-mod_Uim/wiki/V2Ray-%E5%AF%B9%E6%8E%A5%E6%95%99%E7%A8%8B)
 
-telegram交流群：https://t.me/joinchat/GQehSEV7LEU3AmRYKQqDVw
+telegram交流群：https://t.me/joinchat/GQehSEV7LEU1Z6E8aQ4z3w
 
 telegtam 频道 ：https://t.me/sspanel_Uim  管理模式参考91yun管理
+
+演示站: [demo.nimaqu.com](https://demo.nimaqu.com) 账号/密码:admin  mukey=NimaQu
 
 **原作者** [galaxychuck](https://github.com/galaxychuck)
 
@@ -23,47 +26,9 @@ telegtam 频道 ：https://t.me/sspanel_Uim  管理模式参考91yun管理
 
 感谢LALA制作教程：https://lala.im/2398.html
 
-GitHub Wiki : https://github.com/NimaQu/ss-panel-v3-mod_UIChanges/wiki/%E5%89%8D%E7%AB%AF%E5%AE%89%E8%A3%85
+GitHub Wiki : https://github.com/NimaQu/ss-panel-v3-mod_Uim/wiki/%E5%89%8D%E7%AB%AF%E5%AE%89%E8%A3%85
 
 Wiki已经启用，欢迎为此面板维护wiki
-
-### 示例图片 Images
-
-Image:
--------------------
-![](https://github.com/galaxychuck/images/blob/master/1.jpg)
-
-> 登陆界面
--------------------
-
-![](https://github.com/galaxychuck/images/blob/master/2.jpg)
-
-> 首页
-
--------------------
-![](https://github.com/galaxychuck/images/blob/master/3.jpg)
-
-> 位置调整
-
--------------------
-![](https://github.com/galaxychuck/images/blob/master/4.jpg)
-
-> 非VIP查看等級1节点显示
-
--------------------
-![](https://github.com/galaxychuck/images/blob/master/5.jpg)
-
-> f2f支付宝支付（[需要代开当面付点我](https://t.me/galaxyq)）
-
--------------------
-![](https://github.com/galaxychuck/images/blob/master/6.jpg)
-
-> 教程
--------------------
-
-![首页](https://i.loli.net/2018/04/05/5ac6407da3a5d.png)
-
-
 
 #### 鸣谢
 
@@ -77,11 +42,13 @@ Image:
 - 为面板加入 AFF 链接功能
 - 商品增加限速和限制 ip 属性
 - 多端口订阅
+- 解决用户列表加载缓慢历史遗留问题
 
-##### [rinSama](https://github.com/mxihan)
+##### [RinSAMA](https://github.com/mxihan)
 
 - 整理分类 config.php
-- spay 优化
+- 美观性调整
+- 客服系统优化
 
 ##### [miku](https://github.com/xcxnig)
 
@@ -93,11 +60,15 @@ Image:
 - 节点负载情况显示&用户账户过期在首页弹窗提醒
 - 增加返利列表
 
-##### [NimaQu](https://github.com/NimaQu)
+[**indexyz**](https://github.com/Indexyz)
 
-- 对接易付通
+- 为面板增加 v2Ray 功能
 
-##### 还有提交过 PR 的朋友，
+[**NeverBehave**](https://github.com/NeverBehave)
+
+- 添加 Telegram OAuth
+
+##### 还有所有被引用过代码的同学，以及所有提交过issue的同学。
 
 #### 关于捐赠
 
@@ -110,21 +81,17 @@ Image:
 
 ##### NimaQu
 
-- [rixCloud-高速云端数据传输服务](https://my.rixcloud.com/aff.php?aff=1354)
-
-
-
-- [Uovz-企业级云服务器](https://www.uovz.com/aff.php?aff=215)
-
-
 
 - [魔方云 - 低成本极速高效 专属您的私有云](https://www.cubecloud.net/aff.php?aff=796)
-
-
-
-- [DGCHost.NET - Singapore VPS | Cheap Asia VPS](https://www.dgchost.net/client/aff.php?aff=524)
 
 
 ##### galaxychuck
 
 - [黛米付-支付接入](https://www.daimiyun.cn/register.php?aff=624)
+- [冲上云霄云主机](http://console.soar-clouds.com/aff.php?aff=94)
+
+
+##### Miku
+
+
+- [qazCloud  | 高速云端数据传输服务](https://www.qaz.cloud)
